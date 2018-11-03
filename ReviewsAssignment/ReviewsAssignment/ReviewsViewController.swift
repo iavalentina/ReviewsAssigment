@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ReviewsViewController.swift
 //  ReviewsAssignment
 //
 //  Created by Valentina Iancu on 03/11/2018.
@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class ReviewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
