@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Review {
+struct Review {
     var score: Int = 0
     var comment: String?
     var userName: String?
