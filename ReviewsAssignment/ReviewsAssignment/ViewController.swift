@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        Networking().fetchCompanyDetails { (company, error) in
+            guard let company = company else { return}
+            print("company =\(company.name)")
+        }
     }
-
-
 }
 

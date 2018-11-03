@@ -13,7 +13,25 @@
 		873B03B0218DECD400CFCB0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873B03AF218DECD400CFCB0C /* Assets.xcassets */; };
 		873B03B3218DECD400CFCB0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B03B1218DECD400CFCB0C /* LaunchScreen.storyboard */; };
 		87969C17218DFEF200386B55 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87969C16218DFEF200386B55 /* Alamofire.framework */; };
+		87969C19218E027100386B55 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87969C18218E027100386B55 /* Networking.swift */; };
+		87969C1C218E19EF00386B55 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87969C16218DFEF200386B55 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		87969C20218E1C7500386B55 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87969C1F218E1C7500386B55 /* Company.swift */; };
+		87969C22218E21C500386B55 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87969C21218E21C500386B55 /* Review.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		87969C1D218E19EF00386B55 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				87969C1C218E19EF00386B55 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		873B03A5218DECD200CFCB0C /* ReviewsAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReviewsAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +42,9 @@
 		873B03B2218DECD400CFCB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B03B4218DECD400CFCB0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87969C16218DFEF200386B55 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		87969C18218E027100386B55 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		87969C1F218E1C7500386B55 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		87969C21218E21C500386B55 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,8 @@
 		873B03A7218DECD200CFCB0C /* ReviewsAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				87969C1E218E1C6100386B55 /* Models */,
+				87969C1A218E027C00386B55 /* Networking */,
 				873B03A8218DECD200CFCB0C /* AppDelegate.swift */,
 				873B03AA218DECD200CFCB0C /* ViewController.swift */,
 				873B03AC218DECD200CFCB0C /* Main.storyboard */,
@@ -76,6 +99,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		87969C1A218E027C00386B55 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				87969C18218E027100386B55 /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		87969C1E218E1C6100386B55 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				87969C1F218E1C7500386B55 /* Company.swift */,
+				87969C21218E21C500386B55 /* Review.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,6 +126,7 @@
 				873B03A1218DECD200CFCB0C /* Sources */,
 				873B03A2218DECD200CFCB0C /* Frameworks */,
 				873B03A3218DECD200CFCB0C /* Resources */,
+				87969C1D218E19EF00386B55 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,8 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87969C22218E21C500386B55 /* Review.swift in Sources */,
+				87969C19218E027100386B55 /* Networking.swift in Sources */,
 				873B03AB218DECD200CFCB0C /* ViewController.swift in Sources */,
 				873B03A9218DECD200CFCB0C /* AppDelegate.swift in Sources */,
+				87969C20218E1C7500386B55 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
