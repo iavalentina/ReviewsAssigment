@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		870F2FE8218F0F6B0072F443 /* ReviewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870F2FE7218F0F6B0072F443 /* ReviewsViewController.xib */; };
+		870F2FEC218F17B10072F443 /* CompanyViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870F2FEB218F17B10072F443 /* CompanyViewCell.xib */; };
+		870F2FEE218F1B140072F443 /* CompanyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F2FED218F1B140072F443 /* CompanyViewCell.swift */; };
+		870F2FF1218F24430072F443 /* ReviewsHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870F2FEF218F24430072F443 /* ReviewsHeaderViewCell.xib */; };
+		870F2FF2218F24430072F443 /* ReviewsHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F2FF0218F24430072F443 /* ReviewsHeaderViewCell.swift */; };
 		873B03A9218DECD200CFCB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B03A8218DECD200CFCB0C /* AppDelegate.swift */; };
 		873B03B0218DECD400CFCB0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873B03AF218DECD400CFCB0C /* Assets.xcassets */; };
 		873B03B3218DECD400CFCB0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B03B1218DECD400CFCB0C /* LaunchScreen.storyboard */; };
@@ -35,6 +39,10 @@
 
 /* Begin PBXFileReference section */
 		870F2FE7218F0F6B0072F443 /* ReviewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsViewController.xib; sourceTree = "<group>"; };
+		870F2FEB218F17B10072F443 /* CompanyViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyViewCell.xib; sourceTree = "<group>"; };
+		870F2FED218F1B140072F443 /* CompanyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewCell.swift; sourceTree = "<group>"; };
+		870F2FEF218F24430072F443 /* ReviewsHeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsHeaderViewCell.xib; sourceTree = "<group>"; };
+		870F2FF0218F24430072F443 /* ReviewsHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsHeaderViewCell.swift; sourceTree = "<group>"; };
 		873B03A5218DECD200CFCB0C /* ReviewsAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReviewsAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B03A8218DECD200CFCB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		873B03AF218DECD400CFCB0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				87969C27218E483500386B55 /* ReviewsViewController.swift */,
+				870F2FED218F1B140072F443 /* CompanyViewCell.swift */,
+				870F2FF0218F24430072F443 /* ReviewsHeaderViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -128,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				870F2FE7218F0F6B0072F443 /* ReviewsViewController.xib */,
+				870F2FEB218F17B10072F443 /* CompanyViewCell.xib */,
+				870F2FEF218F24430072F443 /* ReviewsHeaderViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,7 +205,9 @@
 			files = (
 				870F2FE8218F0F6B0072F443 /* ReviewsViewController.xib in Resources */,
 				873B03B3218DECD400CFCB0C /* LaunchScreen.storyboard in Resources */,
+				870F2FEC218F17B10072F443 /* CompanyViewCell.xib in Resources */,
 				873B03B0218DECD400CFCB0C /* Assets.xcassets in Resources */,
+				870F2FF1218F24430072F443 /* ReviewsHeaderViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +220,9 @@
 			files = (
 				87969C22218E21C500386B55 /* Review.swift in Sources */,
 				87969C19218E027100386B55 /* Networking.swift in Sources */,
+				870F2FEE218F1B140072F443 /* CompanyViewCell.swift in Sources */,
 				873B03A9218DECD200CFCB0C /* AppDelegate.swift in Sources */,
+				870F2FF2218F24430072F443 /* ReviewsHeaderViewCell.swift in Sources */,
 				87969C29218E483500386B55 /* ReviewsViewController.swift in Sources */,
 				87969C20218E1C7500386B55 /* Company.swift in Sources */,
 			);
