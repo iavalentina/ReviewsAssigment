@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		870F2FE8218F0F6B0072F443 /* ReviewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870F2FE7218F0F6B0072F443 /* ReviewsViewController.xib */; };
 		873B03A9218DECD200CFCB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B03A8218DECD200CFCB0C /* AppDelegate.swift */; };
 		873B03B0218DECD400CFCB0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873B03AF218DECD400CFCB0C /* Assets.xcassets */; };
 		873B03B3218DECD400CFCB0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B03B1218DECD400CFCB0C /* LaunchScreen.storyboard */; };
@@ -15,7 +16,6 @@
 		87969C1C218E19EF00386B55 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87969C16218DFEF200386B55 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		87969C20218E1C7500386B55 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87969C1F218E1C7500386B55 /* Company.swift */; };
 		87969C22218E21C500386B55 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87969C21218E21C500386B55 /* Review.swift */; };
-		87969C28218E483500386B55 /* ReviewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87969C26218E483500386B55 /* ReviewsViewController.xib */; };
 		87969C29218E483500386B55 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87969C27218E483500386B55 /* ReviewsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		870F2FE7218F0F6B0072F443 /* ReviewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsViewController.xib; sourceTree = "<group>"; };
 		873B03A5218DECD200CFCB0C /* ReviewsAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReviewsAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B03A8218DECD200CFCB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		873B03AF218DECD400CFCB0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		87969C18218E027100386B55 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		87969C1F218E1C7500386B55 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		87969C21218E21C500386B55 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
-		87969C26218E483500386B55 /* ReviewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsViewController.xib; sourceTree = "<group>"; };
 		87969C27218E483500386B55 /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		870F2FDE218EFB2B0072F443 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				87969C27218E483500386B55 /* ReviewsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		873B039C218DECD200CFCB0C = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +87,11 @@
 		873B03A7218DECD200CFCB0C /* ReviewsAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				870F2FDE218EFB2B0072F443 /* ViewControllers */,
 				87969C23218E44DB00386B55 /* Views */,
 				87969C1E218E1C6100386B55 /* Models */,
 				87969C1A218E027C00386B55 /* Networking */,
 				873B03A8218DECD200CFCB0C /* AppDelegate.swift */,
-				87969C27218E483500386B55 /* ReviewsViewController.swift */,
 				873B03AF218DECD400CFCB0C /* Assets.xcassets */,
 				873B03B1218DECD400CFCB0C /* LaunchScreen.storyboard */,
 				873B03B4218DECD400CFCB0C /* Info.plist */,
@@ -119,7 +127,7 @@
 		87969C23218E44DB00386B55 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				87969C26218E483500386B55 /* ReviewsViewController.xib */,
+				870F2FE7218F0F6B0072F443 /* ReviewsViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,7 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87969C28218E483500386B55 /* ReviewsViewController.xib in Resources */,
+				870F2FE8218F0F6B0072F443 /* ReviewsViewController.xib in Resources */,
 				873B03B3218DECD400CFCB0C /* LaunchScreen.storyboard in Resources */,
 				873B03B0218DECD400CFCB0C /* Assets.xcassets in Resources */,
 			);
