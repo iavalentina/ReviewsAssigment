@@ -12,8 +12,15 @@
 		870F2FEE218F1B140072F443 /* CompanyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F2FED218F1B140072F443 /* CompanyViewCell.swift */; };
 		870F2FF1218F24430072F443 /* ReviewsHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870F2FEF218F24430072F443 /* ReviewsHeaderViewCell.xib */; };
 		870F2FF2218F24430072F443 /* ReviewsHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F2FF0218F24430072F443 /* ReviewsHeaderViewCell.swift */; };
+		870F2FF5218F327B0072F443 /* RateAndReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870F2FF3218F327B0072F443 /* RateAndReviewCell.xib */; };
+		870F2FF6218F327B0072F443 /* RateAndReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F2FF4218F327B0072F443 /* RateAndReviewCell.swift */; };
+		870F2FF8218F35070072F443 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 870F2FF7218F35070072F443 /* Assets.xcassets */; };
+		870F2FFB218F47DA0072F443 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870F2FF9218F47DA0072F443 /* ReviewCell.xib */; };
+		870F2FFC218F47DA0072F443 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F2FFA218F47DA0072F443 /* ReviewCell.swift */; };
+		870F2FFF218F69190072F443 /* AddReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870F2FFD218F69190072F443 /* AddReviewViewController.xib */; };
+		870F3000218F69190072F443 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F2FFE218F69190072F443 /* AddReviewViewController.swift */; };
+		870F3003218F6BEA0072F443 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F3002218F6BEA0072F443 /* UIColor+Extension.swift */; };
 		873B03A9218DECD200CFCB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B03A8218DECD200CFCB0C /* AppDelegate.swift */; };
-		873B03B0218DECD400CFCB0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873B03AF218DECD400CFCB0C /* Assets.xcassets */; };
 		873B03B3218DECD400CFCB0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B03B1218DECD400CFCB0C /* LaunchScreen.storyboard */; };
 		87969C17218DFEF200386B55 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87969C16218DFEF200386B55 /* Alamofire.framework */; };
 		87969C19218E027100386B55 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87969C18218E027100386B55 /* Networking.swift */; };
@@ -43,9 +50,16 @@
 		870F2FED218F1B140072F443 /* CompanyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewCell.swift; sourceTree = "<group>"; };
 		870F2FEF218F24430072F443 /* ReviewsHeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsHeaderViewCell.xib; sourceTree = "<group>"; };
 		870F2FF0218F24430072F443 /* ReviewsHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsHeaderViewCell.swift; sourceTree = "<group>"; };
+		870F2FF3218F327B0072F443 /* RateAndReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateAndReviewCell.xib; sourceTree = "<group>"; };
+		870F2FF4218F327B0072F443 /* RateAndReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAndReviewCell.swift; sourceTree = "<group>"; };
+		870F2FF7218F35070072F443 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		870F2FF9218F47DA0072F443 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
+		870F2FFA218F47DA0072F443 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		870F2FFD218F69190072F443 /* AddReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddReviewViewController.xib; sourceTree = "<group>"; };
+		870F2FFE218F69190072F443 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
+		870F3002218F6BEA0072F443 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		873B03A5218DECD200CFCB0C /* ReviewsAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReviewsAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B03A8218DECD200CFCB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		873B03AF218DECD400CFCB0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		873B03B2218DECD400CFCB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B03B4218DECD400CFCB0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87969C16218DFEF200386B55 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -71,10 +85,21 @@
 			isa = PBXGroup;
 			children = (
 				87969C27218E483500386B55 /* ReviewsViewController.swift */,
+				870F2FFE218F69190072F443 /* AddReviewViewController.swift */,
 				870F2FED218F1B140072F443 /* CompanyViewCell.swift */,
 				870F2FF0218F24430072F443 /* ReviewsHeaderViewCell.swift */,
+				870F2FF4218F327B0072F443 /* RateAndReviewCell.swift */,
+				870F2FFA218F47DA0072F443 /* ReviewCell.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		870F3001218F6BD40072F443 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				870F3002218F6BEA0072F443 /* UIColor+Extension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		873B039C218DECD200CFCB0C = {
@@ -97,13 +122,14 @@
 		873B03A7218DECD200CFCB0C /* ReviewsAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				870F3001218F6BD40072F443 /* Utils */,
 				870F2FDE218EFB2B0072F443 /* ViewControllers */,
 				87969C23218E44DB00386B55 /* Views */,
 				87969C1E218E1C6100386B55 /* Models */,
 				87969C1A218E027C00386B55 /* Networking */,
 				873B03A8218DECD200CFCB0C /* AppDelegate.swift */,
-				873B03AF218DECD400CFCB0C /* Assets.xcassets */,
 				873B03B1218DECD400CFCB0C /* LaunchScreen.storyboard */,
+				870F2FF7218F35070072F443 /* Assets.xcassets */,
 				873B03B4218DECD400CFCB0C /* Info.plist */,
 			);
 			path = ReviewsAssignment;
@@ -138,8 +164,11 @@
 			isa = PBXGroup;
 			children = (
 				870F2FE7218F0F6B0072F443 /* ReviewsViewController.xib */,
+				870F2FFD218F69190072F443 /* AddReviewViewController.xib */,
 				870F2FEB218F17B10072F443 /* CompanyViewCell.xib */,
 				870F2FEF218F24430072F443 /* ReviewsHeaderViewCell.xib */,
+				870F2FF3218F327B0072F443 /* RateAndReviewCell.xib */,
+				870F2FF9218F47DA0072F443 /* ReviewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,9 +234,12 @@
 			files = (
 				870F2FE8218F0F6B0072F443 /* ReviewsViewController.xib in Resources */,
 				873B03B3218DECD400CFCB0C /* LaunchScreen.storyboard in Resources */,
+				870F2FFB218F47DA0072F443 /* ReviewCell.xib in Resources */,
 				870F2FEC218F17B10072F443 /* CompanyViewCell.xib in Resources */,
-				873B03B0218DECD400CFCB0C /* Assets.xcassets in Resources */,
 				870F2FF1218F24430072F443 /* ReviewsHeaderViewCell.xib in Resources */,
+				870F2FF8218F35070072F443 /* Assets.xcassets in Resources */,
+				870F2FFF218F69190072F443 /* AddReviewViewController.xib in Resources */,
+				870F2FF5218F327B0072F443 /* RateAndReviewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,9 +253,13 @@
 				87969C22218E21C500386B55 /* Review.swift in Sources */,
 				87969C19218E027100386B55 /* Networking.swift in Sources */,
 				870F2FEE218F1B140072F443 /* CompanyViewCell.swift in Sources */,
+				870F3003218F6BEA0072F443 /* UIColor+Extension.swift in Sources */,
+				870F2FF6218F327B0072F443 /* RateAndReviewCell.swift in Sources */,
+				870F2FFC218F47DA0072F443 /* ReviewCell.swift in Sources */,
 				873B03A9218DECD200CFCB0C /* AppDelegate.swift in Sources */,
 				870F2FF2218F24430072F443 /* ReviewsHeaderViewCell.swift in Sources */,
 				87969C29218E483500386B55 /* ReviewsViewController.swift in Sources */,
+				870F3000218F69190072F443 /* AddReviewViewController.swift in Sources */,
 				87969C20218E1C7500386B55 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

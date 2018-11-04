@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="122" id="brx-Lt-zNZ" customClass="ReviewCell" customModule="ReviewsAssignment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="167"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="brx-Lt-zNZ" id="dm2-MM-0ft">
+                <rect key="frame" x="0.0" y="0.0" width="345" height="166.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="bzV-gN-BNV">
+                        <rect key="frame" x="0.0" y="48" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="feX-cl-dtt"/>
+                            <constraint firstAttribute="width" constant="35" id="vTy-fN-Me2"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Karl Svensson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4c-Kj-3D6">
+                        <rect key="frame" x="50" y="46" width="111.5" height="18.5"/>
+                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ClU-0F-QZU">
+                        <rect key="frame" x="50" y="67.5" width="60" height="12"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_filled_gray" translatesAutoresizingMaskIntoConstraints="NO" id="IFe-sd-d5w">
+                                <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="12" id="1Rp-VP-aUO"/>
+                                    <constraint firstAttribute="height" constant="12" id="hHO-2r-7qa"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_filled_gray" translatesAutoresizingMaskIntoConstraints="NO" id="Y9V-Rd-X6t">
+                                <rect key="frame" x="12" y="0.0" width="12" height="12"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_filled_gray" translatesAutoresizingMaskIntoConstraints="NO" id="vcv-dy-JIF">
+                                <rect key="frame" x="24" y="0.0" width="12" height="12"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_filled_gray" translatesAutoresizingMaskIntoConstraints="NO" id="IYe-cQ-HcG">
+                                <rect key="frame" x="36" y="0.0" width="12" height="12"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_filled_gray" translatesAutoresizingMaskIntoConstraints="NO" id="1ve-52-ChG">
+                                <rect key="frame" x="48" y="0.0" width="12" height="12"/>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1min ago - hitta.se" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6Z-VA-HUJ">
+                        <rect key="frame" x="119" y="65.5" width="107" height="15"/>
+                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cx-Pc-x3a">
+                        <rect key="frame" x="0.0" y="15" width="90" height="19"/>
+                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liked it very much - probably one of the best thai restaurants in the city - recommend!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77b-sI-MAQ">
+                        <rect key="frame" x="50" y="91.5" width="295" height="61"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cA-ub-tsM">
+                        <rect key="frame" x="327" y="47" width="18" height="7"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="7" id="5Ds-Tz-6en"/>
+                            <constraint firstAttribute="width" constant="18" id="ewD-Ml-onn"/>
+                        </constraints>
+                        <state key="normal" image="more_button"/>
+                        <connections>
+                            <action selector="editReviewButtonPressed:" destination="brx-Lt-zNZ" eventType="touchUpInside" id="EjM-Ld-fqh"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="W6Z-VA-HUJ" firstAttribute="top" secondItem="B4c-Kj-3D6" secondAttribute="bottom" constant="1" id="0Xl-Ib-zex"/>
+                    <constraint firstItem="B4c-Kj-3D6" firstAttribute="top" secondItem="1cx-Pc-x3a" secondAttribute="bottom" constant="12" id="8dR-m9-c2v"/>
+                    <constraint firstItem="ClU-0F-QZU" firstAttribute="top" secondItem="B4c-Kj-3D6" secondAttribute="bottom" constant="3" id="Asp-Vl-1ah"/>
+                    <constraint firstItem="B4c-Kj-3D6" firstAttribute="leading" secondItem="bzV-gN-BNV" secondAttribute="trailing" constant="15" id="HQF-XR-lZs"/>
+                    <constraint firstItem="1cA-ub-tsM" firstAttribute="top" secondItem="dm2-MM-0ft" secondAttribute="top" constant="47" id="Ka1-IX-NLN"/>
+                    <constraint firstAttribute="trailing" secondItem="1cA-ub-tsM" secondAttribute="trailing" id="PVg-oR-gJX"/>
+                    <constraint firstItem="77b-sI-MAQ" firstAttribute="leading" secondItem="B4c-Kj-3D6" secondAttribute="leading" id="QfA-mM-CPY"/>
+                    <constraint firstItem="bzV-gN-BNV" firstAttribute="leading" secondItem="dm2-MM-0ft" secondAttribute="leading" id="WNC-1y-j7t"/>
+                    <constraint firstItem="W6Z-VA-HUJ" firstAttribute="leading" secondItem="ClU-0F-QZU" secondAttribute="trailing" constant="9" id="eXL-HD-uC6"/>
+                    <constraint firstItem="77b-sI-MAQ" firstAttribute="top" secondItem="W6Z-VA-HUJ" secondAttribute="bottom" constant="11" id="h1c-4H-wen"/>
+                    <constraint firstAttribute="bottom" secondItem="77b-sI-MAQ" secondAttribute="bottom" constant="14" id="j00-kv-DXy"/>
+                    <constraint firstItem="1cx-Pc-x3a" firstAttribute="leading" secondItem="dm2-MM-0ft" secondAttribute="leading" id="mgR-6M-TiP"/>
+                    <constraint firstItem="bzV-gN-BNV" firstAttribute="top" secondItem="1cx-Pc-x3a" secondAttribute="bottom" constant="14" id="nYM-r4-vPv"/>
+                    <constraint firstAttribute="trailing" secondItem="77b-sI-MAQ" secondAttribute="trailing" id="thO-By-mAm"/>
+                    <constraint firstItem="ClU-0F-QZU" firstAttribute="leading" secondItem="B4c-Kj-3D6" secondAttribute="leading" id="v5Z-gu-hua"/>
+                    <constraint firstItem="1cx-Pc-x3a" firstAttribute="top" secondItem="dm2-MM-0ft" secondAttribute="top" constant="15" id="wnV-qn-oIp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="fok-f1-8vP"/>
+            <connections>
+                <outlet property="commentLabel" destination="77b-sI-MAQ" id="ER8-fD-3g5"/>
+                <outlet property="editReviewButton" destination="1cA-ub-tsM" id="zGd-OI-BRa"/>
+                <outlet property="timeLabel" destination="W6Z-VA-HUJ" id="6od-aH-oVb"/>
+                <outlet property="titleLabel" destination="1cx-Pc-x3a" id="tYo-h5-x4R"/>
+                <outlet property="userNameLabel" destination="B4c-Kj-3D6" id="L1C-GF-XpT"/>
+                <outletCollection property="ratingsCollection" destination="IFe-sd-d5w" collectionClass="NSMutableArray" id="Zph-ML-kxb"/>
+                <outletCollection property="ratingsCollection" destination="Y9V-Rd-X6t" collectionClass="NSMutableArray" id="SEa-OW-Lib"/>
+                <outletCollection property="ratingsCollection" destination="vcv-dy-JIF" collectionClass="NSMutableArray" id="djo-m7-SJf"/>
+                <outletCollection property="ratingsCollection" destination="IYe-cQ-HcG" collectionClass="NSMutableArray" id="4L1-1J-fpW"/>
+                <outletCollection property="ratingsCollection" destination="1ve-52-ChG" collectionClass="NSMutableArray" id="83W-gi-bPP"/>
+            </connections>
+            <point key="canvasLocation" x="-231.19999999999999" y="13.493253373313344"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="more_button" width="93" height="21"/>
+        <image name="person" width="75" height="75"/>
+        <image name="star_filled_gray" width="96" height="93"/>
+    </resources>
+</document>

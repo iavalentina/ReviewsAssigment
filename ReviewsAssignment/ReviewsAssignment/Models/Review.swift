@@ -10,8 +10,9 @@ import Foundation
 
 struct Review {
     var score: Int = 0
+    var userName: String? = "Anonymous"
     var comment: String?
-    var userName: String?
+    var timeAdded: Date?
     /*
      Form fields
      * score=3
