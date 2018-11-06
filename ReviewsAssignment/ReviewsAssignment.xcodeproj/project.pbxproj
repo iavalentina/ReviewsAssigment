@@ -20,6 +20,8 @@
 		870F2FFF218F69190072F443 /* AddReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870F2FFD218F69190072F443 /* AddReviewViewController.xib */; };
 		870F3000218F69190072F443 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F2FFE218F69190072F443 /* AddReviewViewController.swift */; };
 		870F3003218F6BEA0072F443 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F3002218F6BEA0072F443 /* UIColor+Extension.swift */; };
+		8718C10F2190F5D600DE5BFE /* RaitingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8718C10E2190F5D600DE5BFE /* RaitingView.xib */; };
+		8718C1112190F63700DE5BFE /* RaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8718C1102190F63700DE5BFE /* RaitingView.swift */; };
 		873B03A9218DECD200CFCB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B03A8218DECD200CFCB0C /* AppDelegate.swift */; };
 		873B03B3218DECD400CFCB0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B03B1218DECD400CFCB0C /* LaunchScreen.storyboard */; };
 		87969C17218DFEF200386B55 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87969C16218DFEF200386B55 /* Alamofire.framework */; };
@@ -58,6 +60,8 @@
 		870F2FFD218F69190072F443 /* AddReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddReviewViewController.xib; sourceTree = "<group>"; };
 		870F2FFE218F69190072F443 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		870F3002218F6BEA0072F443 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		8718C10E2190F5D600DE5BFE /* RaitingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RaitingView.xib; sourceTree = "<group>"; };
+		8718C1102190F63700DE5BFE /* RaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaitingView.swift; sourceTree = "<group>"; };
 		873B03A5218DECD200CFCB0C /* ReviewsAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReviewsAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B03A8218DECD200CFCB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		873B03B2218DECD400CFCB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 				870F2FF0218F24430072F443 /* ReviewsHeaderViewCell.swift */,
 				870F2FF4218F327B0072F443 /* RateAndReviewCell.swift */,
 				870F2FFA218F47DA0072F443 /* ReviewCell.swift */,
+				8718C1102190F63700DE5BFE /* RaitingView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				870F2FEF218F24430072F443 /* ReviewsHeaderViewCell.xib */,
 				870F2FF3218F327B0072F443 /* RateAndReviewCell.xib */,
 				870F2FF9218F47DA0072F443 /* ReviewCell.xib */,
+				8718C10E2190F5D600DE5BFE /* RaitingView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 				870F2FF8218F35070072F443 /* Assets.xcassets in Resources */,
 				870F2FFF218F69190072F443 /* AddReviewViewController.xib in Resources */,
 				870F2FF5218F327B0072F443 /* RateAndReviewCell.xib in Resources */,
+				8718C10F2190F5D600DE5BFE /* RaitingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +260,7 @@
 				87969C22218E21C500386B55 /* Review.swift in Sources */,
 				87969C19218E027100386B55 /* Networking.swift in Sources */,
 				870F2FEE218F1B140072F443 /* CompanyViewCell.swift in Sources */,
+				8718C1112190F63700DE5BFE /* RaitingView.swift in Sources */,
 				870F3003218F6BEA0072F443 /* UIColor+Extension.swift in Sources */,
 				870F2FF6218F327B0072F443 /* RateAndReviewCell.swift in Sources */,
 				870F2FFC218F47DA0072F443 /* ReviewCell.swift in Sources */,

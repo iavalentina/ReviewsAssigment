@@ -14,6 +14,7 @@ class ReviewsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     private var company: Company?
     var latestReviews: [Review] = []
+    var userReview: Review?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,7 @@ class ReviewsViewController: UIViewController {
     }
 }
 
-
+// MARK: TableViewDataSource
 extension ReviewsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -79,7 +80,7 @@ extension ReviewsViewController: UITableViewDataSource {
         }
         // third cell Rate and Review Cell
         if indexPath.row == 2, let cell = tableView.dequeueReusableCell(withIdentifier: "RateAndReviewCell") as? RateAndReviewCell  {
-            cell.delegate = self
+            cell.ratitingView.delegate = self
             return cell
         }
         
@@ -87,16 +88,33 @@ extension ReviewsViewController: UITableViewDataSource {
         if indexPath.row - 3 <= latestReviews.count,
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell") as? ReviewCell  {
             // show title only if is the first review
-            cell.configureCell(with: latestReviews[indexPath.row - 3], showTitle: (indexPath.row - 3 == 0))
+            // else if it's last cell show the View all reviews button
+            
+            cell.configureCell(with: latestReviews[indexPath.row - 3],
+                               showTitle: (indexPath.row - 3 == 0),
+                               lastCell: indexPath.row - 3 == latestReviews.count - 1)
             return cell
         }
         
+        // cell with the View all reviews
         return UITableViewCell()
     }
 }
+
+// MARK: - Other Protocols
 extension ReviewsViewController: RatingProtocol {
-    func ratingButtonsPressed() {
-        let vc = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
-        navigationController?.pushViewController(vc, animated: false)
+    func ratingButtonsPressed(with score: Int) {
+        let viewController = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
+        viewController.setupView(with: company, score: score)
+        viewController.delegate = self
+        navigationController?.present(viewController, animated: false)
+    }
+}
+
+extension ReviewsViewController: AddReviewProtocol {
+    func viewDismissed(with review: Review?) {
+        userReview = review
+        // replace the third cell with Your Review
+//        tableView.reloadRowsAtIndexPaths(paths, withRowAnimation: UITableViewRowAnimation.None)
     }
 }
