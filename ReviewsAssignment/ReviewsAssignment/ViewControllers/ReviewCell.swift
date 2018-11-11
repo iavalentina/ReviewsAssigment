@@ -21,6 +21,7 @@ class ReviewCell: UITableViewCell {
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var editReviewButton: UIButton!
     @IBOutlet weak var viewAllReviewsButton: UIButton!
+    @IBOutlet weak var userIcon: UIImageView!
     
     weak var delegate: EditReviewProtocol?
 
@@ -30,6 +31,14 @@ class ReviewCell: UITableViewCell {
         userNameLabel.text = review?.userName
         commentLabel.text = review?.comment
         editReviewButton.isHidden = !newReview
+        if let time = review?.timeDescription, let platform = review?.platformReview {
+            timeLabel.text = time + " - " + platform
+        }
+        
+        if !(review?.platformReview?.contains("hitta") ?? true) {
+            userIcon.image = UIImage(named: "other_person")
+        }
+        
         if let ratingScore = review?.score {
             for index in 0...ratingScore-1 {
                 ratingsCollection[index].image = UIImage(named: "star_filled_yellow")
@@ -42,5 +51,4 @@ class ReviewCell: UITableViewCell {
         // should open the AddReviewViewController
         delegate?.editReviewPressed()
     }
-    
 }

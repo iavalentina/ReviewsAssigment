@@ -17,21 +17,18 @@ class AddReviewViewController: UIViewController {
     @IBOutlet weak var raitingView: RaitingView?
     @IBOutlet weak var titleLabel: UILabel?
     weak var delegate: AddReviewProtocol?
-    private var previousRating: Int = 0
     private var currentCompany: Company?
-    private var currentReview =  Review()
+    private var currentReview: Review?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // navigationController?.navigationBar.backgroundColor = UIColor.NavibationBarBlue()
-        // Do any additional setup after loading the view.
         titleLabel?.text = currentCompany?.name ?? ""
-        raitingView?.setupView(with: previousRating)
+        raitingView?.setupView(with: currentReview?.score)
     }
     
-    func setupView(with company: Company?, score:Int) {
+    func setupView(with company: Company?, review: Review?) {
         currentCompany = company
-        previousRating = score
+        currentReview = review
     }
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
@@ -42,6 +39,7 @@ class AddReviewViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
+        // Send the response
         dismiss(animated: false) {
             self.delegate?.viewDismissed(with: self.currentReview)
         }

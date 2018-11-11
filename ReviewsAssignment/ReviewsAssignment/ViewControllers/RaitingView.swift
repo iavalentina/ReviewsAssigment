@@ -13,6 +13,14 @@ protocol RatingProtocol: class {
     func ratingButtonsPressed(with score: Int)
 }
 
+enum Stars: String {
+    case one = "I hated it"
+    case two = "I didn’t like it"
+    case three = "It was OK"
+    case four = "I liked it"
+    case five = "I loved it"
+}
+
 @IBDesignable
 class RaitingView: UIView {
     
@@ -48,7 +56,8 @@ class RaitingView: UIView {
         }
     }
     
-    func setupView(with score: Int) {
+    func setupView(with score: Int?) {
+        guard let score = score else { return }
         for index in 0...score {
             raitingCollection[index].setImage(UIImage(named: "star_filled_yellow"), for: .normal)
         }

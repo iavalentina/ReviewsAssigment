@@ -8,11 +8,27 @@
 
 import Foundation
 
+let defaultPlatformReview = "hitta.se"
+
 struct Review {
-    var score: Int = 0
-    var userName: String? = "Anonymous"
+    var score: Int?
+    var userName: String?
     var comment: String?
     var timeAdded: Date?
+    var platformReview: String?
+    
+    init(score: Int?  = nil,
+         userName: String? = "Anonymous",
+         comment: String? = nil,
+         timeAdded: Date? = nil,
+         platformReview: String? = defaultPlatformReview) {
+        self.score = score
+        self.userName = userName
+        self.comment = comment
+        self.timeAdded = timeAdded
+        self.platformReview = platformReview
+    }
+    
     /*
      Form fields
      * score=3
@@ -20,4 +36,8 @@ struct Review {
      * comment=[user comment]
      * userName=[user name]
      */
+    
+    var timeDescription: String? {
+        return timeAdded?.timestampString
+    }
 }

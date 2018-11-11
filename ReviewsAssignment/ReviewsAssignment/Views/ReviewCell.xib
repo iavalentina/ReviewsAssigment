@@ -117,6 +117,7 @@
                 <outlet property="editReviewButton" destination="1cA-ub-tsM" id="zGd-OI-BRa"/>
                 <outlet property="timeLabel" destination="W6Z-VA-HUJ" id="6od-aH-oVb"/>
                 <outlet property="titleLabel" destination="1cx-Pc-x3a" id="tYo-h5-x4R"/>
+                <outlet property="userIcon" destination="bzV-gN-BNV" id="h5T-1a-xbG"/>
                 <outlet property="userNameLabel" destination="B4c-Kj-3D6" id="L1C-GF-XpT"/>
                 <outlet property="viewAllReviewsButton" destination="3OT-cA-qd8" id="KyK-lY-ZWr"/>
                 <outletCollection property="ratingsCollection" destination="IFe-sd-d5w" collectionClass="NSMutableArray" id="Zph-ML-kxb"/>

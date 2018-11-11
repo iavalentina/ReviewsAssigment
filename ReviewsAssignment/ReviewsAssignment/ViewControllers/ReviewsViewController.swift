@@ -48,17 +48,20 @@ class ReviewsViewController: UIViewController {
     private func latestReviewData() {
         
         latestReviews.append(Review(score: 4,
-                                     userName: "Anonymus",
-                                     comment: "Liked it very much - probably one of the best thai restaurants in the city - recommend!",
-                                     timeAdded: nil))
+                                    userName: "Anonymus",
+                                    comment: "Liked it very much - probably one of the best thai restaurants in the city - recommend!",
+                                    timeAdded: Calendar.current.date(byAdding: .hour, value: -12, to: Date()),
+                                    platformReview: "hitta.se"))
         latestReviews.append(Review(score: 3,
-                                     userName: "Jenny Svensson",
-                                     comment: "Maybe a bit too fast food. I personally dislike that. Good otherwise.",
-                                     timeAdded: nil))
+                                    userName: "Jenny Svensson",
+                                    comment: "Maybe a bit too fast food. I personally dislike that. Good otherwise.",
+                                    timeAdded: Calendar.current.date(byAdding: .day, value: -1, to: Date()),
+                                    platformReview: "hitta.se"))
         latestReviews.append(Review(score: 5,
-                                     userName: "happy56",
-                                     comment: "Super good! Love the food!",
-                                     timeAdded: nil))
+                                    userName: "happy56",
+                                    comment: "Super good! Love the food!",
+                                    timeAdded: Calendar.current.date(byAdding: .day, value: -1, to: Date()),
+                                    platformReview: "yelp.com"))
         
     }
 }
@@ -110,8 +113,9 @@ extension ReviewsViewController: UITableViewDataSource {
 // MARK: - Other Protocols
 extension ReviewsViewController: RatingProtocol {
     func ratingButtonsPressed(with score: Int) {
+        let review = Review(score: score)
         let viewController = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
-        viewController.setupView(with: company, score: score)
+        viewController.setupView(with: company, review: review)
         viewController.delegate = self
         navigationController?.present(viewController, animated: false)
     }
