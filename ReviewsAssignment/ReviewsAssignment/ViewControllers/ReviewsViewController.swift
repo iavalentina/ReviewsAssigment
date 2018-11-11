@@ -23,10 +23,16 @@ class ReviewsViewController: UIViewController {
         
         latestReviewData()
         
-        Networking().fetchCompanyDetails { [weak self] (company, error) in
-            guard let company = company else { return }
-            self?.company = company
-            self?.tableView.reloadData()
+        
+        Networking().fetchCompanyDetails {  [weak self] result in
+            switch result {
+            case .success(let json):
+                guard let company = json as? Company else { return }
+                self?.company = company
+                self?.tableView.reloadData()
+            case .error(let error):
+                print(error.localizedDescription)
+            }
         }
         
         registerCellNibs()

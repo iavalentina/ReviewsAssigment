@@ -23,8 +23,10 @@ enum URLs {
      */
 }
 
-public typealias CompanyCompletionBlock = ((_ company: Company?, _ error: Error?) -> Void)
-public typealias ServiceCompletionBlock = ((_ success: Bool, _ error: Error?) -> Void)
+enum NetworkResponse<T> {
+    case success(T)
+    case error(Error)
+}
 
 public struct Networking {
     
@@ -34,7 +36,7 @@ public struct Networking {
      * X-HITTA-SHARED-IDENTIFIER: 15188693697264027
      */
     
-    func fetchCompanyDetails(_ completion: @escaping CompanyCompletionBlock) {
+    func fetchCompanyDetails(_ completion:@escaping (NetworkResponse<Any>) -> Void) {
         Alamofire.request(URLs.companyUrl,
                           method: .get,
                           encoding: URLEncoding.default)
@@ -46,10 +48,10 @@ public struct Networking {
                     if  let result = jsonResponse?["result"], let companiesJson = result["companies"] as? [String: AnyObject],
                         let companyJson =  companiesJson["company"] as? [[String: AnyObject]] {
                         let company = Company(json: companyJson[0])
-                        completion(company, nil)
+                        completion(NetworkResponse.success(company))
                     }
                 case .failure(let error):
-                    completion(nil, error)
+                    completion(NetworkResponse.error(error))
                 }
         }
     }
@@ -57,7 +59,7 @@ public struct Networking {
     // Save the user review with parameters:
     // score, user name,
     func saveReview(parameters: [String: AnyObject]? = nil,
-                    completion: @escaping ServiceCompletionBlock) {
+                    completion:@escaping (NetworkResponse<Any>) -> Void) {
         Alamofire.request(URLs.sandbox,
                           method: .post,
                           parameters: parameters,
@@ -65,7 +67,12 @@ public struct Networking {
                           headers: contentTypeHeader)
             .validate()
             .responseJSON { response in
-               completion(response.result.isSuccess, response.result.error)
+                switch response.result {
+                case .success:
+                    completion(NetworkResponse.success(response.result))
+                case .failure(let error):
+                    completion(NetworkResponse.error(error))
+                }
         }
     }
 }
