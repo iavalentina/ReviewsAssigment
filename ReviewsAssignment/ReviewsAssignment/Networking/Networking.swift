@@ -58,8 +58,30 @@ public struct Networking {
     
     // Save the user review with parameters:
     // score, user name,
-    func saveReview(parameters: [String: AnyObject]? = nil,
+    func saveReview(_ review: Review,
                     completion:@escaping (NetworkResponse<Any>) -> Void) {
+        /*
+         Form fields
+         * score=3
+         * companyId=ctyfiintu
+         * comment=[user comment]
+         * userName=[user name]
+
+         */
+        var parameters: [String: AnyObject] = [:]
+        parameters["companyId"] = "ctyfiintu" as AnyObject
+        if let score = review.score {
+            parameters["score"] = score as AnyObject
+        }
+    
+        if let comment = review.comment {
+            parameters["comment"] = comment as AnyObject
+        }
+        
+        if let userName = review.userName {
+            parameters["userName"] = userName as AnyObject
+        }
+        
         Alamofire.request(URLs.sandbox,
                           method: .post,
                           parameters: parameters,

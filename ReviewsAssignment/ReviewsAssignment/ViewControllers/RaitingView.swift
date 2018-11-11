@@ -19,6 +19,24 @@ enum Stars: String {
     case three = "It was OK"
     case four = "I liked it"
     case five = "I loved it"
+    
+   static func message(for score: Int) -> String {
+        switch score {
+        case 1:
+            return Stars.one.rawValue
+        case 2:
+            return Stars.two.rawValue
+        case 3:
+            return Stars.three.rawValue
+        case 4:
+            return Stars.four.rawValue
+        case 5:
+            return Stars.five.rawValue
+        default:
+            break
+        }
+        return ""
+    }
 }
 
 @IBDesignable
@@ -46,19 +64,19 @@ class RaitingView: UIView {
     }
     
     @IBAction func rateButtonPressesd(sender: UIButton) {
-        guard let score = raitingCollection.firstIndex(of: sender) else { return }
-        setupView(with: score)
-        delegate?.ratingButtonsPressed(with: score)
-        if score < raitingCollection.count - 1 {
-            for index in score+1...raitingCollection.count - 1 {
+        guard let buttonIndex = raitingCollection.firstIndex(of: sender) else { return }
+        setupView(for: buttonIndex)
+        delegate?.ratingButtonsPressed(with: buttonIndex)
+        if buttonIndex < raitingCollection.count - 1 {
+            for index in buttonIndex+1...raitingCollection.count - 1 {
                 raitingCollection[index].setImage(UIImage(named: "star_empty"), for: .normal)
             }
         }
     }
     
-    func setupView(with score: Int?) {
-        guard let score = score else { return }
-        for index in 0...score {
+    func setupView(for buttonIndex: Int?) {
+        guard let buttonIndex = buttonIndex else { return }
+        for index in 0...buttonIndex {
             raitingCollection[index].setImage(UIImage(named: "star_filled_yellow"), for: .normal)
         }
     }

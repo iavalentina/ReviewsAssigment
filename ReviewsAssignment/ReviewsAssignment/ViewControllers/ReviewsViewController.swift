@@ -16,11 +16,14 @@ class ReviewsViewController: UIViewController {
     var latestReviews: [Review] = []
     var userReview: Review?
     
+    fileprivate var dataArray: [Any] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         
+        loadData()
         latestReviewData()
         
         
@@ -64,6 +67,12 @@ class ReviewsViewController: UIViewController {
                                     platformReview: "yelp.com"))
         
     }
+    
+    func loadData() {
+        dataArray.append(company?.name ?? "")
+        dataArray.append("Reviews")
+        dataArray.append("RateAndReview")
+    }
 }
 
 // MARK: TableViewDataSource
@@ -73,35 +82,38 @@ extension ReviewsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return latestReviews.count + 3 // company name, reviews header, rate and review/your review, 3 latests reviews +first cell one label for title of the section + last cell button
+        return dataArray.count + latestReviews.count // company name, reviews header, rate and review/your review, 3 latests reviews +first cell one label for title of the section + last cell button
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // on first cell needs to display company name
-        if indexPath.row == 0, let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyViewCell") as? CompanyViewCell {
-            cell.compayNameLabel.text = company?.name
-            return cell
+        if indexPath.row < dataArray.count {
+            if indexPath.row == 0, let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyViewCell") as? CompanyViewCell {
+                cell.compayNameLabel.text = company?.name
+                return cell
+            }
+            
+            // second cell will show an header for Reviews part
+            if indexPath.row == 1, let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewsHeaderViewCell")  {
+                return cell
+            }
+            // third cell Rate and Review Cell
+            if indexPath.row == 2, let cell = tableView.dequeueReusableCell(withIdentifier: "RateAndReviewCell") as? RateAndReviewCell  {
+                cell.ratitingView.delegate = self
+                return cell
+            }
         }
         
-        // second cell will show an header for Reviews part
-        if indexPath.row == 1, let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewsHeaderViewCell")  {
-            return cell
-        }
-        // third cell Rate and Review Cell
-        if indexPath.row == 2, let cell = tableView.dequeueReusableCell(withIdentifier: "RateAndReviewCell") as? RateAndReviewCell  {
-            cell.ratitingView.delegate = self
-            return cell
-        }
-        
+        let reviewIndex =  indexPath.row - dataArray.count
         // Latest reviews
-        if indexPath.row - 3 <= latestReviews.count,
+        if reviewIndex <= latestReviews.count,
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell") as? ReviewCell  {
             // show title only if is the first review
             // else if it's last cell show the View all reviews button
             
-            cell.configureCell(with: latestReviews[indexPath.row - 3],
-                               showTitle: (indexPath.row - 3 == 0),
-                               lastCell: indexPath.row - 3 == latestReviews.count - 1)
+            cell.configureCell(with: latestReviews[reviewIndex],
+                               showTitle: (reviewIndex == 0),
+                               lastCell: reviewIndex == latestReviews.count - 1)
             return cell
         }
         
@@ -112,7 +124,8 @@ extension ReviewsViewController: UITableViewDataSource {
 
 // MARK: - Other Protocols
 extension ReviewsViewController: RatingProtocol {
-    func ratingButtonsPressed(with score: Int) {
+    func ratingButtonsPressed(with buttonIndex: Int) {
+        let score = buttonIndex + 1
         let review = Review(score: score)
         let viewController = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
         viewController.setupView(with: company, review: review)
@@ -125,6 +138,9 @@ extension ReviewsViewController: AddReviewProtocol {
     func viewDismissed(with review: Review?) {
         userReview = review
         // replace the third cell with Your Review
+//        let indexPath = IndexPath(item: 2, section: 0)
+//        tableView.deleteRows(at: [indexPath], with: .fade)
+//        tableView.insertRows(at: [indexPath], with: .fade)
 //        tableView.reloadRowsAtIndexPaths(paths, withRowAnimation: UITableViewRowAnimation.None)
     }
 }
