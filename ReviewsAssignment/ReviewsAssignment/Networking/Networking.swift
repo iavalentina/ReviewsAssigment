@@ -30,11 +30,27 @@ enum NetworkResponse<T> {
 
 public struct Networking {
     
-  let contentTypeHeader = ["Content-Type": "application/x-www-form-urlencoded"]
-    /*
-     * X-HITTA-DEVICE-NAME: MOBILE_WEB
-     * X-HITTA-SHARED-IDENTIFIER: 15188693697264027
-     */
+  let contentTypeHeader = ["Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"]
+    
+    /// Custom session manager instance
+    static let sessionManager: SessionManager = {
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 20
+        let manager = Alamofire.SessionManager(configuration: configuration)
+        
+        /// Pass Authorization header on redirects
+        manager.delegate.taskWillPerformHTTPRedirection = { (session, task, response, request) in
+            var finalRequest = request
+            if let request = task.originalRequest,
+                let headers = request.allHTTPHeaderFields,
+                let authorizationHeaderValue = headers["Authorization"] {
+                finalRequest.addValue(authorizationHeaderValue, forHTTPHeaderField: "Authorization")
+            }
+            return finalRequest
+        }
+        
+        return manager
+    }()
     
     func fetchCompanyDetails(_ completion:@escaping (NetworkResponse<Any>) -> Void) {
         Alamofire.request(URLs.companyUrl,
@@ -58,7 +74,7 @@ public struct Networking {
     
     // Save the user review with parameters:
     // score, user name,
-    func saveReview(_ review: Review,
+    func saveReview(_ review: Review?,
                     completion:@escaping (NetworkResponse<Any>) -> Void) {
         /*
          Form fields
@@ -70,23 +86,30 @@ public struct Networking {
          */
         var parameters: [String: AnyObject] = [:]
         parameters["companyId"] = "ctyfiintu" as AnyObject
-        if let score = review.score {
+        if let score = review?.score {
             parameters["score"] = score as AnyObject
         }
     
-        if let comment = review.comment {
+        if let comment = review?.comment {
             parameters["comment"] = comment as AnyObject
         }
         
-        if let userName = review.userName {
+        if let userName = review?.userName {
             parameters["userName"] = userName as AnyObject
         }
+        /*
+         * X-HITTA-DEVICE-NAME: MOBILE_WEB
+         * X-HITTA-SHARED-IDENTIFIER: 15188693697264027
+         */
+        var headers:[String: String] = contentTypeHeader
+        headers["X-HITTA-DEVICE-NAME"] = "MOBILE_WEB"
+        headers["X-HITTA-SHARED-IDENTIFIER"] = "15188693697264027"
         
         Alamofire.request(URLs.sandbox,
                           method: .post,
                           parameters: parameters,
-                          encoding: JSONEncoding.default,
-                          headers: contentTypeHeader)
+                          encoding:  JSONEncoding.default,
+                          headers: headers)
             .validate()
             .responseJSON { response in
                 switch response.result {

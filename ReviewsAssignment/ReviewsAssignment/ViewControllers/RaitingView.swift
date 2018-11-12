@@ -42,7 +42,7 @@ enum Stars: String {
 @IBDesignable
 class RaitingView: UIView {
     
-    @IBOutlet var raitingCollection: [UIButton]!
+    @IBOutlet private var raitingCollection: [UIButton]!
     weak var delegate: RatingProtocol?
     
     override init(frame: CGRect) {

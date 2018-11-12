@@ -10,5 +10,4 @@ import UIKit
 
 class RateAndReviewCell: UITableViewCell {
     @IBOutlet weak var ratitingView: RaitingView!
-    //    weak var delegate: RatingProtocol?
 }

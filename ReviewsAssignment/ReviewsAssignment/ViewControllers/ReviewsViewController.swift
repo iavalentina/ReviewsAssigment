@@ -9,9 +9,18 @@
 import UIKit
 import Alamofire
 
+enum CellType: String {
+    case company
+    case reviewHeader
+    case rateAndReview
+    case userReview
+    case latestReview
+}
+
+
 class ReviewsViewController: UIViewController {
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView!
     private var company: Company?
     var latestReviews: [Review] = []
     var userReview: Review?
@@ -55,23 +64,27 @@ class ReviewsViewController: UIViewController {
                                     comment: "Liked it very much - probably one of the best thai restaurants in the city - recommend!",
                                     timeAdded: Calendar.current.date(byAdding: .hour, value: -12, to: Date()),
                                     platformReview: "hitta.se"))
+        dataArray.append(CellType.latestReview)
+        
         latestReviews.append(Review(score: 3,
                                     userName: "Jenny Svensson",
                                     comment: "Maybe a bit too fast food. I personally dislike that. Good otherwise.",
                                     timeAdded: Calendar.current.date(byAdding: .day, value: -1, to: Date()),
                                     platformReview: "hitta.se"))
+        dataArray.append(CellType.latestReview)
+        
         latestReviews.append(Review(score: 5,
                                     userName: "happy56",
                                     comment: "Super good! Love the food!",
                                     timeAdded: Calendar.current.date(byAdding: .day, value: -1, to: Date()),
                                     platformReview: "yelp.com"))
-        
+        dataArray.append(CellType.latestReview)
     }
     
     func loadData() {
-        dataArray.append(company?.name ?? "")
-        dataArray.append("Reviews")
-        dataArray.append("RateAndReview")
+        dataArray.append(CellType.company)
+        dataArray.append(CellType.reviewHeader)
+        dataArray.append(CellType.rateAndReview)
     }
 }
 
@@ -82,39 +95,51 @@ extension ReviewsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataArray.count + latestReviews.count // company name, reviews header, rate and review/your review, 3 latests reviews +first cell one label for title of the section + last cell button
+        return dataArray.count// company name, reviews header, rate and review/your review, 3 latests reviews +first cell one label for title of the section + last cell button
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // on first cell needs to display company name
         if indexPath.row < dataArray.count {
-            if indexPath.row == 0, let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyViewCell") as? CompanyViewCell {
+            guard let data = dataArray[indexPath.row] as? CellType else { return UITableViewCell() }
+            if data.rawValue == CellType.company.rawValue,
+                let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyViewCell") as? CompanyViewCell {
+                
                 cell.compayNameLabel.text = company?.name
                 return cell
             }
             
             // second cell will show an header for Reviews part
-            if indexPath.row == 1, let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewsHeaderViewCell")  {
+            if data.rawValue == CellType.reviewHeader.rawValue,
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewsHeaderViewCell")  {
                 return cell
             }
-            // third cell Rate and Review Cell
-            if indexPath.row == 2, let cell = tableView.dequeueReusableCell(withIdentifier: "RateAndReviewCell") as? RateAndReviewCell  {
+            // third cell Rate and Review Cell or user review
+            if data.rawValue == CellType.rateAndReview.rawValue, let cell = tableView.dequeueReusableCell(withIdentifier: "RateAndReviewCell") as? RateAndReviewCell  {
                 cell.ratitingView.delegate = self
                 return cell
             }
-        }
-        
-        let reviewIndex =  indexPath.row - dataArray.count
-        // Latest reviews
-        if reviewIndex <= latestReviews.count,
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell") as? ReviewCell  {
-            // show title only if is the first review
-            // else if it's last cell show the View all reviews button
+            // third cell Rate and Review Cell
+            if data.rawValue == CellType.userReview.rawValue, let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell") as? ReviewCell  {
+                cell.configureCell(with: userReview,
+                                   newReview: true,
+                                   showTitle: true)
+                //configure
+                return cell
+            }
             
-            cell.configureCell(with: latestReviews[reviewIndex],
-                               showTitle: (reviewIndex == 0),
-                               lastCell: reviewIndex == latestReviews.count - 1)
-            return cell
+            let reviewIndex =  indexPath.row - 3
+            // Latest reviews
+            if reviewIndex <= latestReviews.count,
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell") as? ReviewCell  {
+                // show title only if is the first review
+                // else if it's last cell show the View all reviews button
+                
+                cell.configureCell(with: latestReviews[reviewIndex],
+                                   showTitle: (reviewIndex == 0),
+                                   lastCell: reviewIndex == latestReviews.count - 1)
+                return cell
+            }
         }
         
         // cell with the View all reviews
@@ -138,9 +163,8 @@ extension ReviewsViewController: AddReviewProtocol {
     func viewDismissed(with review: Review?) {
         userReview = review
         // replace the third cell with Your Review
-//        let indexPath = IndexPath(item: 2, section: 0)
-//        tableView.deleteRows(at: [indexPath], with: .fade)
-//        tableView.insertRows(at: [indexPath], with: .fade)
-//        tableView.reloadRowsAtIndexPaths(paths, withRowAnimation: UITableViewRowAnimation.None)
+        dataArray.remove(at: 2)
+        dataArray.insert(CellType.userReview, at: 2)
+        tableView.reloadData()
     }
 }

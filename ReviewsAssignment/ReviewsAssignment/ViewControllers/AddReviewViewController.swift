@@ -12,6 +12,8 @@ protocol AddReviewProtocol:class {
     func viewDismissed(with review: Review?)
 }
 
+let textFiledPlaceholder = ""
+
 class AddReviewViewController: UIViewController {
 
     @IBOutlet weak var raitingView: RaitingView?
@@ -43,7 +45,6 @@ class AddReviewViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
-        
         dismiss(animated: false) {
             self.delegate?.viewDismissed(with: self.currentReview)
         }
@@ -59,31 +60,34 @@ class AddReviewViewController: UIViewController {
         if commentTextView.text != "" && commentTextView.text != "Add more details on your experience..." {
             currentReview?.comment = commentTextView.text
         }
-        guard let review = currentReview else { return }
-        Networking().saveReview(review) { result in
+        
+        currentReview?.platformReview = "hitta.se"
+        currentReview?.timeAdded = Date()
+        
+        Networking().saveReview(currentReview) { [weak self] result in
             switch result {
             case .success(let json):
                 print(json)
             case .error(let error):
                 print(error.localizedDescription)
             }
-        }
-        
-        dismiss(animated: false) {
-            self.delegate?.viewDismissed(with: self.currentReview)
+            self?.presentAlertView(handler: { [weak self]_ in
+                self?.dismiss(animated: false) {
+                    self?.delegate?.viewDismissed(with: self?.currentReview)
+                }})
         }
     }
     
     fileprivate func setupTextViewPlaceholder() {
         commentTextView.text = "Add more details on your experience..."
-        commentTextView.textColor = UIColor.lightGray
+        commentTextView.textColor = UIColor.warmGrey()
     }
 }
 
 extension AddReviewViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         
-        if commentTextView.textColor == UIColor.lightGray {
+        if commentTextView.textColor == UIColor.warmGrey() {
             commentTextView.text = ""
             commentTextView.textColor = UIColor.black
         }
@@ -104,3 +108,4 @@ extension AddReviewViewController: RatingProtocol {
         currentReview?.score = score
     }
 }
+

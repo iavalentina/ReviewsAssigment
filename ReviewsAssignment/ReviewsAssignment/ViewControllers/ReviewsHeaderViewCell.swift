@@ -10,7 +10,7 @@ import UIKit
 
 class ReviewsHeaderViewCell: UITableViewCell {
     
-    @IBOutlet weak var raitingBoxView: UILabel!
+    @IBOutlet private weak var raitingBoxView: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
