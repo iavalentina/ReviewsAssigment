@@ -20,7 +20,7 @@ struct Review {
     init(score: Int?  = nil,
          userName: String? = "Anonymous",
          comment: String? = nil,
-         timeAdded: Date? = nil,
+         timeAdded: Date? = Date(),
          platformReview: String? = defaultPlatformReview) {
         self.score = score
         self.userName = userName
@@ -36,8 +36,4 @@ struct Review {
      * comment=[user comment]
      * userName=[user name]
      */
-    
-    var timeDescription: String? {
-        return timeAdded?.timestampString
-    }
 }

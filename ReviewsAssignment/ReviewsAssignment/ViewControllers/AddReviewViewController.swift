@@ -12,7 +12,7 @@ protocol AddReviewProtocol:class {
     func viewDismissed(with review: Review?)
 }
 
-let textFiledPlaceholder = ""
+let textFiledPlaceholder = "Add more details on your experience..."
 
 class AddReviewViewController: UIViewController {
 
@@ -44,6 +44,7 @@ class AddReviewViewController: UIViewController {
         currentReview = review
     }
     
+    // MARK: - Actions
     @IBAction func closeButtonPressed(_ sender: UIButton) {
         dismiss(animated: false) {
             self.delegate?.viewDismissed(with: self.currentReview)
@@ -51,19 +52,17 @@ class AddReviewViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        // Send the response
         if userNameTextView.text != "" {
             currentReview?.userName = userNameTextView.text
         } else {
             currentReview?.userName = "Anonymous"
         }
-        if commentTextView.text != "" && commentTextView.text != "Add more details on your experience..." {
+        
+        if commentTextView.text != "" && commentTextView.text != textFiledPlaceholder {
             currentReview?.comment = commentTextView.text
         }
         
-        currentReview?.platformReview = "hitta.se"
-        currentReview?.timeAdded = Date()
-        
+        // Send the response
         Networking().saveReview(currentReview) { [weak self] result in
             switch result {
             case .success(let json):
@@ -79,11 +78,12 @@ class AddReviewViewController: UIViewController {
     }
     
     fileprivate func setupTextViewPlaceholder() {
-        commentTextView.text = "Add more details on your experience..."
+        commentTextView.text = textFiledPlaceholder
         commentTextView.textColor = UIColor.warmGrey()
     }
 }
 
+// MARK: - Delegates
 extension AddReviewViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         

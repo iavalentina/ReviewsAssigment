@@ -92,23 +92,23 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="W6Z-VA-HUJ" firstAttribute="top" secondItem="B4c-Kj-3D6" secondAttribute="bottom" constant="1" id="0Xl-Ib-zex"/>
-                    <constraint firstItem="B4c-Kj-3D6" firstAttribute="top" secondItem="1cx-Pc-x3a" secondAttribute="bottom" constant="12" id="8dR-m9-c2v"/>
                     <constraint firstItem="ClU-0F-QZU" firstAttribute="top" secondItem="B4c-Kj-3D6" secondAttribute="bottom" constant="3" id="Asp-Vl-1ah"/>
                     <constraint firstItem="3OT-cA-qd8" firstAttribute="centerX" secondItem="dm2-MM-0ft" secondAttribute="centerX" id="FBa-f4-50q"/>
                     <constraint firstItem="B4c-Kj-3D6" firstAttribute="leading" secondItem="bzV-gN-BNV" secondAttribute="trailing" constant="15" id="HQF-XR-lZs"/>
+                    <constraint firstItem="B4c-Kj-3D6" firstAttribute="top" secondItem="bzV-gN-BNV" secondAttribute="top" constant="-2" id="JaY-fO-mi2"/>
                     <constraint firstItem="1cA-ub-tsM" firstAttribute="top" secondItem="dm2-MM-0ft" secondAttribute="top" constant="47" id="Ka1-IX-NLN"/>
                     <constraint firstAttribute="trailing" secondItem="1cA-ub-tsM" secondAttribute="trailing" id="PVg-oR-gJX"/>
                     <constraint firstItem="77b-sI-MAQ" firstAttribute="leading" secondItem="B4c-Kj-3D6" secondAttribute="leading" id="QfA-mM-CPY"/>
-                    <constraint firstAttribute="bottom" secondItem="3OT-cA-qd8" secondAttribute="bottom" priority="750" id="WHt-vv-Lkg"/>
+                    <constraint firstAttribute="bottom" secondItem="3OT-cA-qd8" secondAttribute="bottom" id="WHt-vv-Lkg"/>
                     <constraint firstItem="bzV-gN-BNV" firstAttribute="leading" secondItem="dm2-MM-0ft" secondAttribute="leading" id="WNC-1y-j7t"/>
                     <constraint firstItem="W6Z-VA-HUJ" firstAttribute="leading" secondItem="ClU-0F-QZU" secondAttribute="trailing" constant="9" id="eXL-HD-uC6"/>
                     <constraint firstItem="77b-sI-MAQ" firstAttribute="top" secondItem="W6Z-VA-HUJ" secondAttribute="bottom" constant="11" id="h1c-4H-wen"/>
                     <constraint firstItem="1cx-Pc-x3a" firstAttribute="leading" secondItem="dm2-MM-0ft" secondAttribute="leading" id="mgR-6M-TiP"/>
                     <constraint firstItem="bzV-gN-BNV" firstAttribute="top" secondItem="1cx-Pc-x3a" secondAttribute="bottom" constant="14" id="nYM-r4-vPv"/>
-                    <constraint firstItem="3OT-cA-qd8" firstAttribute="top" secondItem="77b-sI-MAQ" secondAttribute="bottom" priority="750" constant="13" id="pRI-IW-WYn"/>
+                    <constraint firstItem="3OT-cA-qd8" firstAttribute="top" secondItem="77b-sI-MAQ" secondAttribute="bottom" constant="13" id="pRI-IW-WYn"/>
                     <constraint firstAttribute="trailing" secondItem="77b-sI-MAQ" secondAttribute="trailing" id="thO-By-mAm"/>
                     <constraint firstItem="ClU-0F-QZU" firstAttribute="leading" secondItem="B4c-Kj-3D6" secondAttribute="leading" id="v5Z-gu-hua"/>
-                    <constraint firstItem="1cx-Pc-x3a" firstAttribute="top" secondItem="dm2-MM-0ft" secondAttribute="top" priority="750" constant="15" id="wnV-qn-oIp"/>
+                    <constraint firstItem="1cx-Pc-x3a" firstAttribute="top" secondItem="dm2-MM-0ft" secondAttribute="top" constant="15" id="wnV-qn-oIp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="fok-f1-8vP"/>
@@ -126,7 +126,7 @@
                 <outletCollection property="ratingsCollection" destination="IYe-cQ-HcG" collectionClass="NSMutableArray" id="4L1-1J-fpW"/>
                 <outletCollection property="ratingsCollection" destination="1ve-52-ChG" collectionClass="NSMutableArray" id="83W-gi-bPP"/>
             </connections>
-            <point key="canvasLocation" x="-583" y="18"/>
+            <point key="canvasLocation" x="-583.20000000000005" y="17.991004497751124"/>
         </tableViewCell>
     </objects>
     <resources>

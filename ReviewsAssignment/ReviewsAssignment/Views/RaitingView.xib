@@ -21,17 +21,16 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="263" height="41"/>
+            <rect key="frame" x="0.0" y="0.0" width="263" height="39"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="xoF-v9-b8z">
-                    <rect key="frame" x="0.0" y="0.0" width="263" height="41"/>
+                    <rect key="frame" x="0.0" y="0.0" width="263" height="39"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4t-Bb-UCM">
-                            <rect key="frame" x="0.0" y="0.0" width="39" height="41"/>
+                            <rect key="frame" x="0.0" y="0.0" width="39" height="39"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="39" id="fVu-NT-1hv"/>
-                                <constraint firstAttribute="width" constant="39" id="pSz-sf-9Xv"/>
+                                <constraint firstAttribute="height" constant="39" id="e9y-07-Lem"/>
                             </constraints>
                             <state key="normal" image="star_empty"/>
                             <connections>
@@ -39,28 +38,28 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gh5-hj-l9M">
-                            <rect key="frame" x="56" y="0.0" width="39" height="41"/>
+                            <rect key="frame" x="56" y="0.0" width="39" height="39"/>
                             <state key="normal" image="star_empty"/>
                             <connections>
                                 <action selector="rateButtonPressesdWithSender:" destination="-1" eventType="touchUpInside" id="aez-uY-yuo"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqa-Tq-7De">
-                            <rect key="frame" x="112" y="0.0" width="39" height="41"/>
+                            <rect key="frame" x="112" y="0.0" width="39" height="39"/>
                             <state key="normal" image="star_empty"/>
                             <connections>
                                 <action selector="rateButtonPressesdWithSender:" destination="-1" eventType="touchUpInside" id="k5J-iX-4Z6"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VqL-hS-n6R">
-                            <rect key="frame" x="168" y="0.0" width="39" height="41"/>
+                            <rect key="frame" x="168" y="0.0" width="39" height="39"/>
                             <state key="normal" image="star_empty"/>
                             <connections>
                                 <action selector="rateButtonPressesdWithSender:" destination="-1" eventType="touchUpInside" id="yLl-QJ-Az4"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CN8-dR-1gY">
-                            <rect key="frame" x="224" y="0.0" width="39" height="41"/>
+                            <rect key="frame" x="224" y="0.0" width="39" height="39"/>
                             <state key="normal" image="star_empty"/>
                             <connections>
                                 <action selector="rateButtonPressesdWithSender:" destination="-1" eventType="touchUpInside" id="AN0-a8-mhv"/>
@@ -71,10 +70,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="xoF-v9-b8z" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="EKt-y8-ake"/>
-                <constraint firstItem="xoF-v9-b8z" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Pvr-wl-QQd"/>
-                <constraint firstItem="xoF-v9-b8z" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Uun-a3-Ibf"/>
-                <constraint firstItem="xoF-v9-b8z" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qpP-7n-89k"/>
+                <constraint firstItem="xoF-v9-b8z" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="EKt-y8-ake"/>
+                <constraint firstItem="xoF-v9-b8z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Pvr-wl-QQd"/>
+                <constraint firstItem="xoF-v9-b8z" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="Uun-a3-Ibf"/>
+                <constraint firstItem="xoF-v9-b8z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qpP-7n-89k"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -38,7 +38,7 @@ class ReviewCell: UITableViewCell {
         }
         
         editReviewButton.isHidden = !newReview
-        if let time = review?.timeDescription, let platform = review?.platformReview {
+        if let time = review?.timeAdded?.timestampString, let platform = review?.platformReview {
             timeLabel.text = time + " - " + platform
         }
         
