@@ -30,27 +30,7 @@ enum NetworkResponse<T> {
 
 public struct Networking {
     
-  let contentTypeHeader = ["Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"]
-    
-    /// Custom session manager instance
-    static let sessionManager: SessionManager = {
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 20
-        let manager = Alamofire.SessionManager(configuration: configuration)
-        
-        /// Pass Authorization header on redirects
-        manager.delegate.taskWillPerformHTTPRedirection = { (session, task, response, request) in
-            var finalRequest = request
-            if let request = task.originalRequest,
-                let headers = request.allHTTPHeaderFields,
-                let authorizationHeaderValue = headers["Authorization"] {
-                finalRequest.addValue(authorizationHeaderValue, forHTTPHeaderField: "Authorization")
-            }
-            return finalRequest
-        }
-        
-        return manager
-    }()
+  let contentTypeHeader = ["Content-Type": "application/x-www-form-urlencoded"]
     
     func fetchCompanyDetails(_ completion:@escaping (NetworkResponse<Any>) -> Void) {
         Alamofire.request(URLs.companyUrl,
@@ -108,16 +88,16 @@ public struct Networking {
         Alamofire.request(URLs.sandbox,
                           method: .post,
                           parameters: parameters,
-                          encoding:  JSONEncoding.default,
+                          encoding:  URLEncoding.default,
                           headers: headers)
             .validate()
-            .responseJSON { response in
-                switch response.result {
+            .responseData(completionHandler: { data in
+                switch data.result {
                 case .success:
-                    completion(NetworkResponse.success(response.result))
+                    completion(NetworkResponse.success(data.result))
                 case .failure(let error):
                     completion(NetworkResponse.error(error))
                 }
-        }
+            })
     }
 }
