@@ -34,7 +34,7 @@ class AddReviewViewController: UIViewController {
         if let score = currentReview?.score {
             let buttonIndex =  score - 1
             raitingView?.setupView(for: buttonIndex)
-            scoreString.text = Stars.message(for: buttonIndex)
+            scoreString.text = Stars.message(for: score)
         }
         setupTextViewPlaceholder()
     }
